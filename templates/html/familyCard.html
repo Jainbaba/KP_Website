@@ -1,0 +1,35 @@
+{% extends 'html/index.html' %}
+{% block head %}
+{% endblock head %}
+{% block Family %}
+    <div
+            class="container"
+            id="mainContainer"
+            style="padding: 10px 10px"
+    >
+        <div class="card">
+            <h5 class="card-header">Sha {{ family.familyName }} {{ family.familySurname }}</h5>
+            <div class="card-body">
+                <h6 class="card-title">{{ family.marudharMe }}</h6>
+                <p class="card-text">{{ family.residenceAddress }}</p>
+                <p class="card-text id">{{ family.familyId }}</p>
+                <div class="text-center">
+                    <button
+                            class="btn btn-outline-primary"
+                            style="margin: 10px 10px"
+                            id="addPersonBtn"
+                    >
+                        Add Person
+                    </button>
+                    <button
+                            class="btn btn-outline-primary"
+                            type="button"
+                            style="margin: 10px 10px"
+                    >
+                        Edit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock Family %}

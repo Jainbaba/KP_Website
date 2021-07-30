@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>KP FORMS</title>
+    {#    <link href="{% static 'css/select2.css' %}" rel="stylesheet"/>#}
+    {#    <script src="{% static 'js/select2.full.js' %}"></script>#}
+
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="{% static 'js/select2.full.js' %}"></script>
+    {#    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>#}
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+    {% block head %}
+    {% endblock head %}
+</head>
+
+<body>
+<div
+        class="container"
+        id="mainContainer"
+        style="width: 75%; padding: 20px 15px"
+>
+    {% block Family %}
+    <form method="post" class="needs-validation" id="familyForm" novalidate autocomplete="off">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Family Forms</legend>
+            <div class="form-group">
+                <label>Family Details</label>
+                <div
+                        class="form-row justify-content-start"
+                        style="
+                margin-right: 0px;
+                margin-left: 0px;
+                margin-top: 2px;
+                margin-bottom: 2px;
+              "
+                >
+                    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                        {{ familyForm.familyName }}
+                        {#                <input#}
+                        {#                  class="form-control float-left mr-sm-2"#}
+                        {#                  type="text"#}
+                        {#                  id="familyName"#}
+                        {#                  required#}
+                        {#                  placeholder="Family Name"#}
+                        {#                  autofocus#}
+                        {#                />#}
+                        <div class="invalid-feedback">Enter the Family Name</div>
+                    </div>
+                    <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                        {{ familyForm.familySurname }}
+                        {#                <input#}
+                        {#                  class="form-control float-left mr-sm-2"#}
+                        {#                  type="text"#}
+                        {#                  id="surname"#}
+                        {#                  placeholder="Surname"#}
+                        {#                  autofocus=""#}
+                        {#                  inputmode="latin"#}
+                        {#                  required=""#}
+                        {#                />#}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div
+                        class="form-row"
+                        style="
+                margin-right: 0px;
+                margin-left: 0px;
+                margin-top: 2px;
+                margin-bottom: 2px;
+              "
+                >
+                    <div class="col">
+                        {{ familyForm.residenceAddress }}
+                        {#                <textarea#}
+                        {#                  class="form-control"#}
+                        {#                  id="residenceAddress"#}
+                        {#                  placeholder="Residence Address"#}
+                        {#                  rows="3"#}
+                        {#                  required#}
+                        {#                ></textarea>#}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div
+                        class="form-row justify-content-start"
+                        style="
+                margin-right: 0px;
+                margin-left: 0px;
+                margin-top: 2px;
+                margin-bottom: 2px;
+              "
+                >
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        {{ familyForm.residenceState }}
+                        {#                <select#}
+                        {#                  required#}
+                        {#                  class="form-control"#}
+                        {#                  id="homeState"#}
+                        {#                >#}
+                        {#                  <option value="" selected="" hidden="" disabled="">#}
+                        {#                    State#}
+                        {#                  </option>#}
+                        {#                </select>#}
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        {#                <select required class="form-control" id="homeCity" required="">#}
+                        {#                  <option value="" selected="" hidden="" disabled="">#}
+                        {#                    City#}
+                        {#                  </option>#}
+                        {#                </select>#}
+                        {{ familyForm.residenceCity }}
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        {#                <select required class="form-control" id="homeCity" required="">#}
+                        {#                  <option value="" selected="" hidden="" disabled="">#}
+                        {#                    City#}
+                        {#                  </option>#}
+                        {#                </select>#}
+                        {{ familyForm.residenceArea }}
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        {{ familyForm.residencePincode }}
+                        {#                <input#}
+                        {#                  required#}
+                        {#                  class="form-control"#}
+                        {#                  type="text"#}
+                        {#                  placeholder="Pincode"#}
+                        {#                  #}
+                        {#                />#}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div
+                        class="form-row justify-content-start"
+                        style="
+                margin-right: 0px;
+                margin-left: 0px;
+                margin-top: 2px;
+                margin-bottom: 2px;
+              "
+                >
+                    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                        {{ familyForm.marudharMe }}
+                        {#                        <select class="form-control" id="marudharMe" required>#}
+                        {#                            <option value="" selected="" hidden="" disabled="">#}
+                        {#                                Marudhar Me#}
+                        {#                            </option>#}
+                        {#                            <option value="Sojat Road">Sojat Road</option>#}
+                        {#                        </select>#}
+                    </div>
+                    <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                        {{ familyForm.landlineNumber }}
+                        {#                <input#}
+                        {#                  class="form-control float-left mr-sm-2"#}
+                        {#                  type="tel"#}
+                        {#                  id="landline"#}
+                        {#                  placeholder="Landline"#}
+                        {#                  max="10"#}
+                        {#                  min="10"#}
+                        {#                />#}
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button
+                        class="btn btn-outline-success"
+                        type="submit"
+                        style="margin: 10px 10px"
+                >
+                    Save
+                </button
+                >
+                <button
+                        class="btn btn-outline-danger"
+                        type="button"
+                        style="margin: 10px 10px"
+                >
+                    Cancel
+                </button>
+            </div>
+        </fieldset>
+    </form>
+    {% endblock Family  %}
+
+{#    <button class="btn btn-outline-primary" id="addMember" type="button">#}
+{#        +&nbsp;Add a Member#}
+{#    </button>#}
+    {% block Person %}
+
+    {% endblock Person %}
+
+    {% block PersonForm %}
+
+    {% endblock PersonForm %}
+
+
+</div>
+</body>
+</html>
